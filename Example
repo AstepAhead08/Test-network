@@ -1,0 +1,24 @@
+using System;
+
+public class FactorialCalculator
+{
+    public static void Main(string[] args)
+    {
+        int number = 5; // Example number for which factorial is calculated
+        long factorial = CalculateFactorial(number);
+        Console.WriteLine($"Factorial of {number} is: {factorial}");
+    }
+
+    // Recursive function to calculate factorial
+    public static long CalculateFactorial(int n)
+    {
+        if (n == 0)
+        {
+            return 1;
+        }
+        else
+        {
+            return n * CalculateFactorial(n - 1);
+        }
+    }
+}
