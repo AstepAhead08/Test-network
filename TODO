@@ -1,0 +1,31 @@
+class TodoList {
+  constructor() {
+    this.tasks = [];
+  }
+  
+  addTask(task) {
+    this.tasks.push(task);
+  }
+  
+  removeTask(task) {
+    const index = this.tasks.indexOf(task);
+    if(index !== -1) {
+      this.tasks.splice(index, 1);
+    }
+  }
+  
+  displayTasks() {
+    console.log("Tasks:");
+    this.tasks.forEach((task, index) => {
+      console.log(`${index + 1}. ${task}`);
+    });
+  }
+}
+
+const myTodoList = new TodoList();
+myTodoList.addTask("Complete homework");
+myTodoList.addTask("Buy groceries");
+myTodoList.addTask("Call mom");
+myTodoList.displayTasks();
+myTodoList.removeTask("Buy groceries");
+myTodoList.displayTasks();
