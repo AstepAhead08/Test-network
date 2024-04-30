@@ -29,3 +29,11 @@ myTodoList.addTask("Call mom");
 myTodoList.displayTasks();
 myTodoList.removeTask("Buy groceries");
 myTodoList.displayTasks();
+
+def dfs(graph, start, visited=None):
+    if visited is None:
+        visited = set()
+    visited.add(start)
+    for next_node in graph[start] - visited:
+        dfs(graph, next_node, visited)
+    return visited
